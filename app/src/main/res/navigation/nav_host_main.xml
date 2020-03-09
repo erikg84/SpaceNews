@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_main"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.spacenews.view.BaseFragment"
+        android:label="home"
+        tools:layout="@layout/fragment_base">
+        <action
+            android:id="@+id/next_lisview"
+            app:destination="@id/destination_listview" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_listview"
+        android:name="com.example.spacenews.view.ListViewFragment"
+        android:label="fragment_list_view"
+        tools:layout="@layout/fragment_list_view" >
+        <action
+            android:id="@+id/next_detailview"
+            app:destination="@id/destination_detailview" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_detailview"
+        android:name="com.example.spacenews.view.DetailViewFragment"
+        android:label="fragment_detail_view"
+        tools:layout="@layout/fragment_detail_view" />
+</navigation>

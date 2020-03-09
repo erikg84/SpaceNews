@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable name="launch"
+            type="com.example.spacenews.models.LaunchesResponse"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/row_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_clear_night">
+        <ImageView
+            android:id="@+id/patch_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:id="@+id/mission_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@{launch.missionName}"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/rocket_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mission_name"
+            android:layout_toEndOf="@id/patch_image"
+            android:layout_marginStart="15dp"
+            android:text="@{launch.rocket.rocketName}"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/site_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rocket_name"
+            android:layout_toEndOf="@id/patch_image"
+            android:layout_marginStart="15dp"
+            android:text="@{launch.launchSite.siteName}"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/launch_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/site_name"
+            android:layout_toEndOf="@id/patch_image"
+            android:layout_marginStart="15dp"
+            android:text="@{launch.launchDateUtc}"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+</layout>
